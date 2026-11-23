@@ -1,12 +1,12 @@
 import { Footer, Navbar } from "@/widgets";
-import { AppRouter, useTheme } from "./providers";
+import { AppRouter } from "./providers";
 import "./styles/index.scss";
 
 export function App() {
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className="app">
       {/* <button onClick={toggleTheme}>TOGGLE</button> */}
       <Navbar />
       <AppRouter />
