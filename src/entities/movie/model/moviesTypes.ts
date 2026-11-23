@@ -156,3 +156,8 @@ export type MovieReviewsDto = {
   total_pages: number;
   total_results: number;
 };
+
+export type MovieRatingsDto = {
+  kp: number | null;
+  imdb: number | null;
+};

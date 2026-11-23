@@ -3,6 +3,7 @@ import type {
   MovieCreditsDto,
   MovieDetailDto,
   MovieGenresDto,
+  MovieRatingsDto,
   MovieReviewsDto,
   MoviesDto,
   MovieVideosDto,
@@ -227,6 +228,20 @@ export const moviesApi = {
             array.findIndex((item) => item.id === movie.id) === index,
         );
       },
+    });
+  },
+
+  // Рейтинги IMDb и Кинопоиска
+  getMovieRatings: ({ movieId }: { movieId: number }) => {
+    return fetch(`/api/movie-ratings?movieId=${movieId}`).then(
+      (res) => res.json() as Promise<MovieRatingsDto>,
+    );
+  },
+
+  getMovieRatingsQueryOptions: ({ movieId }: { movieId: number }) => {
+    return queryOptions({
+      queryKey: ["movie", movieId, "ratings"],
+      queryFn: () => moviesApi.getMovieRatings({ movieId }),
     });
   },
 };

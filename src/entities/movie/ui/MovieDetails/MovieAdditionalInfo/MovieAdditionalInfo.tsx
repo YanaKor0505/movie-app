@@ -1,12 +1,17 @@
-import type { MovieCreditsDto, MovieDetailDto } from "../../../model";
+import type {
+  MovieCreditsDto,
+  MovieDetailDto,
+  MovieRatingsDto,
+} from "../../../model";
 import styles from "./MovieAdditionalInfo.module.scss";
 
 type Props = {
   movie: MovieDetailDto;
   credits?: MovieCreditsDto;
+  ratings?: MovieRatingsDto;
 };
 
-export const MovieAdditionalInfo = ({ movie, credits }: Props) => {
+export const MovieAdditionalInfo = ({ movie, credits, ratings }: Props) => {
   const { vote_average, genres, production_countries, runtime } = movie;
 
   // Режиссёр
@@ -35,6 +40,14 @@ export const MovieAdditionalInfo = ({ movie, credits }: Props) => {
     {
       label: "Рейтинг TMDB",
       value: vote_average.toFixed(1),
+    },
+    {
+      label: "Рейтинг IMDb",
+      value: ratings?.imdb?.toFixed(1),
+    },
+    {
+      label: "Рейтинг Кинопоиска",
+      value: ratings?.kp?.toFixed(1),
     },
     {
       label: "Жанр",

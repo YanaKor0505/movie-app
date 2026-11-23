@@ -3,6 +3,7 @@ import { moviesApi } from "../../api";
 import { MovieHero } from "./MovieHero";
 import {
   useMovieCredits,
+  useMovieRatings,
   useMovieReviews,
   useMovieVideos,
   useSimilarMovies,
@@ -56,6 +57,8 @@ export function MovieDetails({ movieId }: Props) {
     isFetchingNextPage: isFetchingNextSimilarPage,
   } = useSimilarMovies({ movieId });
 
+  const { data: movieRatings } = useMovieRatings({ movieId });
+
   if (isPending) {
     return <div>Загрузка фильма...</div>;
   }
@@ -79,7 +82,11 @@ export function MovieDetails({ movieId }: Props) {
           />
         </div>
 
-        <MovieAdditionalInfo movie={movie} credits={credits} />
+        <MovieAdditionalInfo
+          movie={movie}
+          credits={credits}
+          ratings={movieRatings}
+        />
       </div>
 
       <SimilarMovies
