@@ -1,0 +1,26 @@
+.swiper {
+  width: 100%;
+  max-width: 800px;
+  overflow: visible;
+}
+
+.swiper :global(.swiper-slide) {
+  width: 260px;
+  transition: opacity 0.5s ease;
+}
+
+.slide {
+  transform: scale(0.8);
+  opacity: 0.45;
+  filter: blur(2px);
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease,
+    filter 0.5s ease;
+}
+
+.swiper :global(.swiper-slide-active) .slide {
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0);
+}

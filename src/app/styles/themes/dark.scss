@@ -1,0 +1,19 @@
+.app.dark {
+  --bg-color:
+    radial-gradient(
+      ellipse at 15% 35%,
+      rgba(100, 15, 65, 0.35),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 85% 65%,
+      rgba(55, 35, 130, 0.35),
+      transparent 45%
+    ),
+    #141025;
+
+  --inverted-bg-color: #e5e5f1;
+
+  --primary-color: white;
+  --secondary-color: #ed0a32;
+}

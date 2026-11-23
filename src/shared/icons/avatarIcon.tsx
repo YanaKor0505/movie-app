@@ -1,0 +1,36 @@
+export const AvatarIcon = () => {
+  return (
+    <svg
+      width="55"
+      height="54"
+      viewBox="0 0 55 54"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g>
+        <rect
+          x="0.5"
+          y="0.5"
+          width="54"
+          height="53"
+          rx="9.5"
+          stroke="currentColor"
+        />
+        <path
+          d="M31.5 22C31.5 24.2091 29.7091 26 27.5 26C25.2909 26 23.5 24.2091 23.5 22C23.5 19.7909 25.2909 18 27.5 18C29.7091 18 31.5 19.7909 31.5 22Z"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          stroke="currentColor"
+        />
+        <path
+          d="M35 36V34C35 32.9391 34.5786 31.9217 33.8284 31.1716C33.0783 30.4214 32.0609 30 31 30H24C22.9391 30 21.9217 30.4214 21.1716 31.1716C20.4214 31.9217 20 32.9391 20 34V36"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          stroke="currentColor"
+        />
+      </g>
+    </svg>
+  );
+};
